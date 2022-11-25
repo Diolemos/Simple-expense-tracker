@@ -1,6 +1,6 @@
 import './App.css';
 import {React,useState} from 'react';
-
+import Expenses from './Expenses/Expenses';
 function App() {
 
 
@@ -32,13 +32,7 @@ function App() {
       {/* graphic */}
       {/* filter */}
       {/* expenses display */}
-      <div> 
-            {expenses.map(expense=>{return(<div>
-            <h2>{expense.title}</h2>
-            <div>{expense.amount}</div>
-            <div>{expense.date.toLocaleString()}</div>
-            </div>)})}
-      </div>
+     <Expenses expenses={expenses}></Expenses>
     </div>
   );
 }
