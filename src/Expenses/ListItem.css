@@ -34,6 +34,10 @@
     padding: 0.5rem;
     border-radius: 4px;
   }
+  .list-item__price span{
+    color: rgb(21, 146, 21);
+    margin-right: 4px;
+  }
   
   @media (min-width: 580px) {
     .list-item__description {

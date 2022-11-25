@@ -1,14 +1,15 @@
 import Card from "../UI/Card"
 import "./ListItem.css"
+import ExpenseDate from "./ExpenseDate"
 const ListItem = (props)=>{
 
     return(
-        <li>
+        <li >
             <Card className='list-item'>
-            <div>{props.date.toLocaleString()}</div>
+            <ExpenseDate date={props.date}></ExpenseDate>
             <div className="list-item__description">
                 <h2 >{props.title}</h2>
-                <div className="list-item__price">${props.amount}</div>    
+                <div className="list-item__price"><span>$</span>{props.amount}</div>    
                 
             </div>    
             
