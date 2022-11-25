@@ -1,15 +1,12 @@
 import "./ExpensesList.css"
+import ListItem from "./ListItem"
 
 export default function ExpenseList(props){
 
 
     return(
         <ul className="expenses-list">
-        {props.expenses.map(expense=>{return(<li>
-        <h2>{expense.title}</h2>
-        <div>${expense.amount}</div>
-        <div>{expense.date.toLocaleString()}</div>
-        </li>)})}
+        {props.expenses.map(expense=>{return(<ListItem title={expense.title} amount={expense.amount} date={expense.date}></ListItem>)})}
         </ul>
     )
 }
