@@ -4,7 +4,7 @@
     align-items: center;
     padding: 0.5rem;
     margin: 1rem 0;
-    background-color: #4b4b4b;
+    background-color: #000000;
   }
   
   .list-item__description {
@@ -29,10 +29,10 @@
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background-color: #162088;
-    border: 1px solid white;
+    background-color: #000000;
+    border: 1px solid rgb(88, 88, 88);
     padding: 0.5rem;
-    border-radius: 12px;
+    border-radius: 4px;
   }
   
   @media (min-width: 580px) {
