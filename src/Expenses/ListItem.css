@@ -45,10 +45,12 @@
       align-items: center;
       justify-content: flex-start;
       flex: 1;
+     
     }
   
     .list-item__description h2 {
       font-size: 1.25rem;
+      text-align: center;
     }
   
     .list-item__price {
