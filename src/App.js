@@ -1,6 +1,8 @@
 import './App.css';
 import {React,useState} from 'react';
 import Expenses from './Expenses/Expenses';
+import NewExpense from './newExpense/NewExpense';
+
 function App() {
 
 
@@ -31,6 +33,8 @@ function App() {
     <div className="App">
       {/* graphic */}
       {/* filter */}
+      {/* inputform */}
+      <NewExpense/>
       {/* expenses display */}
      <Expenses expenses={expenses}></Expenses>
     </div>

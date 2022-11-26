@@ -18,11 +18,11 @@
   }
   
   .list-item h2 {
-    color: #3a3a3a;
+    color: #ffffff;
     font-size: 1rem;
     flex: 1;
     margin: 0 1rem;
-    color: white;
+    /* color: white; */
   }
   
   .list-item__price {
@@ -40,11 +40,13 @@
   }
   
   @media (min-width: 580px) {
+   
     .list-item__description {
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
       flex: 1;
+      
      
     }
   
