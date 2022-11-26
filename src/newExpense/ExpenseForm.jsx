@@ -9,7 +9,7 @@ const ExpenseForm = (props)=>{
             <label>Title</label>
             <input
               type='text'
-             
+             placeholder="Add a tittle"
              
             />
           </div>

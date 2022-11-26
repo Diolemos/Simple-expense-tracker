@@ -50,3 +50,14 @@
         justify-content: center;
     } */
   }
+
+  @media screen and (max-width:350px){
+    .new-expense__control input {
+        
+        padding: 0.5rem;
+       
+       
+        width: 100%;
+        
+      }
+  }
