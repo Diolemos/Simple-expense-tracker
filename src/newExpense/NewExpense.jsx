@@ -6,6 +6,7 @@ const NewExpense = (props)=>{
     const startEditing = ()=>{
         setIsEditing(true)
     }
+    const closeForm = ()=>{setIsEditing(false)}
 
     return( 
         <div className="new-expense"> 
@@ -13,7 +14,7 @@ const NewExpense = (props)=>{
         <button onClick={startEditing}>Add new expense</button>
     )}
     {isEditing&&(
-       <ExpenseForm/>
+       <ExpenseForm cancelClickHandler={closeForm}/>
     )}
 
         </div>

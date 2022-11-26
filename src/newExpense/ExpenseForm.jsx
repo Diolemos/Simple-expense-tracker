@@ -1,6 +1,6 @@
 import "./ExpenseForm.css"
 
-const ExpenseForm = ()=>{
+const ExpenseForm = (props)=>{
 
     return (
         <form >
@@ -16,6 +16,7 @@ const ExpenseForm = ()=>{
           <div className='new-expense__control'>
             <label>Amount</label>
             <input
+                placeholder="$"
               type='number'
               min='0.01'
               step='0.01'
@@ -33,7 +34,7 @@ const ExpenseForm = ()=>{
           </div>
         </div>
         <div className='new-expense__actions'>
-          <button type="button" >Cancel</button>
+          <button type="button" onClick={props.cancelClickHandler} >Cancel</button>
           <button type='submit'>Add Expense</button>
         </div>
       </form>
