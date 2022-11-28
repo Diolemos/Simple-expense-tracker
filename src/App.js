@@ -28,13 +28,15 @@ function App() {
     },
   ])
 
-
+ const updateExpenses = ()=>{
+  return 
+ }
   return (
     <div className="App">
       {/* graphic */}
       {/* filter */}
       {/* inputform */}
-      <NewExpense/>
+      <NewExpense updateExpenses={updateExpenses}/>
       {/* expenses display */}
      <Expenses expenses={expenses}></Expenses>
     </div>
