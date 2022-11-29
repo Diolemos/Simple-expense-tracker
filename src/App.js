@@ -28,8 +28,8 @@ function App() {
     },
   ])
 
- const updateExpenses = ()=>{
-  return 
+ const updateExpenses = (newExpense)=>{
+  setExpenses(prev=>{return [...prev,newExpense]})
  }
   return (
     <div className="App">

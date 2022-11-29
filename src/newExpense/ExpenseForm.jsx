@@ -8,28 +8,38 @@ const [enteredAmount, setEnteredAmount] = useState("")
 const [enteredDate, setEnteredDate] = useState("")
 
 
-// const onChangeTitleHandler = (e)=>{
-  
-//   setExpenseData((prev)=>({...prev, title: e.target.value}))
+const onChangeTitleHandler = (e)=>{
+   setEnteredTitle(e.target.value)
  
-//   console.log("expenseData", expenseData)
-// }
-// const onChangeAmountHandler = (e)=>{
-  
-//   setExpenseData((prev)=>({...prev, amount: e.target.value}))
  
-//   console.log("expenseData", expenseData)
-// }
+}
+const onChangeAmountHandler = (e)=>{
+  
+  setEnteredAmount(e.target.value)
+ 
 
-// const onChangeDateHandler = (e)=>{
+}
+
+const onChangeDateHandler = (e)=>{
   
-//   setExpenseData((prev)=>({...prev, date:e.target.value}))
+  setEnteredDate(e.target.value)
  
-//   console.log("expenseData", expenseData)
-// }
+  
+}
 
 const onSubmitFormHandler = (e)=>{
-  e.preventDefault()
+  //prevent from reloading
+  e.preventDefault() 
+  console.log({title:enteredTitle, amount:enteredAmount, date: new Date(enteredDate)})
+
+  const newExpense = {title:enteredTitle, amount:enteredAmount, date: new Date(enteredDate)}
+  //set the global level state to our user created data
+  props.updateExpenses(newExpense)
+
+  //reset input field using two way biding
+  setEnteredTitle('')
+  setEnteredAmount('')
+  setEnteredDate('')
 }
 
     return (
