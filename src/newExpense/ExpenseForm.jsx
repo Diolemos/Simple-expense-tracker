@@ -3,29 +3,30 @@ import { useState } from "react"
 const ExpenseForm = (props)=>{
 // props.updateExpenses
 
-const [expenseData, setExpenseData] = useState({title: '',
-amount: "", date: ''})
+const [enteredTitle, setEnteredTitle] = useState("")
+const [enteredAmount, setEnteredAmount] = useState("")
+const [enteredDate, setEnteredDate] = useState("")
 
 
-const onChangeTitleHandler = (e)=>{
+// const onChangeTitleHandler = (e)=>{
   
-  setExpenseData((prev)=>({...prev, title: e.target.value}))
+//   setExpenseData((prev)=>({...prev, title: e.target.value}))
  
-  console.log("expenseData", expenseData)
-}
-const onChangeAmountHandler = (e)=>{
+//   console.log("expenseData", expenseData)
+// }
+// const onChangeAmountHandler = (e)=>{
   
-  setExpenseData((prev)=>({...prev, amount: e.target.value}))
+//   setExpenseData((prev)=>({...prev, amount: e.target.value}))
  
-  console.log("expenseData", expenseData)
-}
+//   console.log("expenseData", expenseData)
+// }
 
-const onChangeDateHandler = (e)=>{
+// const onChangeDateHandler = (e)=>{
   
-  setExpenseData((prev)=>({...prev, date: e.target.value}))
+//   setExpenseData((prev)=>({...prev, date:e.target.value}))
  
-  console.log("expenseData", expenseData)
-}
+//   console.log("expenseData", expenseData)
+// }
 
 const onSubmitFormHandler = (e)=>{
   e.preventDefault()
@@ -38,7 +39,7 @@ const onSubmitFormHandler = (e)=>{
             <label>Title</label>
             <input
               type='text'
-              value={expenseData.title}
+              value={enteredTitle}
              placeholder="Add a tittle"
              onChange={onChangeTitleHandler}
              
@@ -51,7 +52,7 @@ const onSubmitFormHandler = (e)=>{
               type='number'
               min='0.01'
               step='0.01'
-              value={expenseData.amount}
+              value={enteredAmount}
               onChange={onChangeAmountHandler}
               
             />
@@ -62,7 +63,7 @@ const onSubmitFormHandler = (e)=>{
               type='date'
               min='2019-01-01'
               max='2022-12-31'
-              value={expenseData.date}
+              value={enteredDate}
               onChange={onChangeDateHandler}
               
             />
