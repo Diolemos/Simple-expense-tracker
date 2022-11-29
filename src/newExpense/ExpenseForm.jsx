@@ -1,46 +1,66 @@
 import "./ExpenseForm.css"
 import { useState } from "react"
+
+
+
+
+
 const ExpenseForm = (props)=>{
-// props.updateExpenses
-
-const [enteredTitle, setEnteredTitle] = useState("")
-const [enteredAmount, setEnteredAmount] = useState("")
-const [enteredDate, setEnteredDate] = useState("")
 
 
-const onChangeTitleHandler = (e)=>{
-   setEnteredTitle(e.target.value)
- 
- 
-}
-const onChangeAmountHandler = (e)=>{
+  const [enteredTitle, setEnteredTitle] = useState("")
+  const [enteredAmount, setEnteredAmount] = useState("")
+  const [enteredDate, setEnteredDate] = useState("")
+  //state for form validation
+
+  const [btnDisabled, setBtnDisabled] = useState(true)
+  //function to check if btn should be enabled
+  //using chained ternary operators
+  const checkIfDisabled = ()=>{
+    const isValid = enteredTitle.length()<5?false
+    :enteredAmount==''?false
+    :enteredDate==''?false
+    :true
+    setBtnDisabled(isValid)
+    
+    
+
+  }
+  const onChangeTitleHandler = (e)=>{
+    setEnteredTitle(e.target.value)
+    checkIfDisabled()
   
-  setEnteredAmount(e.target.value)
- 
-
-}
-
-const onChangeDateHandler = (e)=>{
   
-  setEnteredDate(e.target.value)
- 
+  }
+  const onChangeAmountHandler = (e)=>{
+    
+    setEnteredAmount(e.target.value)
+    checkIfDisabled()
   
-}
 
-const onSubmitFormHandler = (e)=>{
-  //prevent from reloading
-  e.preventDefault() 
-  console.log({title:enteredTitle, amount:enteredAmount, date: new Date(enteredDate)})
+  }
 
-  const newExpense = {title:enteredTitle, amount:enteredAmount, date: new Date(enteredDate)}
-  //set the global level state to our user created data
-  props.updateExpenses(newExpense)
+  const onChangeDateHandler = (e)=>{
+    
+    setEnteredDate(e.target.value)
+    checkIfDisabled()
+    
+  }
 
-  //reset input field using two way biding
-  setEnteredTitle('')
-  setEnteredAmount('')
-  setEnteredDate('')
-}
+  const onSubmitFormHandler = (e)=>{
+    //prevent from reloading
+    e.preventDefault() 
+    console.log({title:enteredTitle, amount:enteredAmount, date: new Date(enteredDate)})
+
+    const newExpense = {title:enteredTitle, amount:enteredAmount, date: new Date(enteredDate)}
+    //set the global level state to our user created data
+    props.updateExpenses(newExpense)
+
+    //reset input field using two way biding
+    setEnteredTitle('')
+    setEnteredAmount('')
+    setEnteredDate('')
+  }
 
     return (
         <form onSubmit={onSubmitFormHandler} >
@@ -81,7 +101,7 @@ const onSubmitFormHandler = (e)=>{
         </div>
         <div className='new-expense__actions'>
           <button type="button" onClick={props.cancelClickHandler} >Cancel</button>
-          <button type='submit'>Add Expense</button>
+          <button type='submit' disabled={btnDisabled}>Add Expense</button>
         </div>
       </form>
     )
