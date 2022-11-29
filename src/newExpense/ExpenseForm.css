@@ -32,6 +32,15 @@
   .new-expense__actions button{
     width: 200px;
   }
+  .new-expense__actions button:disabled,
+  .new-expense__actions button[disabled],
+  .new-expense__actions button:disabled:active,
+  .new-expense__actions button:disabled:hover
+  {
+    background-color: rgb(146, 144, 144);
+    color: rgb(104, 104, 104);
+    border-color: rgb(69, 69, 69);
+  }
  
   @media screen and (max-width:730px){
     .new-expense__controls {

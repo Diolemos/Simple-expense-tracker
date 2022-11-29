@@ -17,11 +17,11 @@ const ExpenseForm = (props)=>{
   //function to check if btn should be enabled
   //using chained ternary operators
   const checkIfDisabled = ()=>{
-    const isValid = enteredTitle.length()<5?false
+    const isValid = enteredTitle.length<5?false
     :enteredAmount==''?false
     :enteredDate==''?false
     :true
-    setBtnDisabled(isValid)
+    setBtnDisabled(!isValid)
     
     
 
@@ -60,6 +60,7 @@ const ExpenseForm = (props)=>{
     setEnteredTitle('')
     setEnteredAmount('')
     setEnteredDate('')
+    setBtnDisabled(true)
   }
 
     return (
