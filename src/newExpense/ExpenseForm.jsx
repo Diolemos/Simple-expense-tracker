@@ -1,5 +1,5 @@
 import "./ExpenseForm.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
@@ -16,26 +16,25 @@ const ExpenseForm = (props)=>{
   const [btnDisabled, setBtnDisabled] = useState(true)
   //function to check if btn should be enabled
   //using chained ternary operators
-  const checkIfDisabled = ()=>{
-    const isValid = enteredTitle.length<5?false
+  
+    useEffect(()=>{
+      const isValid = enteredTitle.length<5?false
     :enteredAmount==''?false
     :enteredDate==''?false
     :true
     setBtnDisabled(!isValid)
-    
-    
-
-  }
+    },[enteredTitle,enteredAmount,enteredDate])
+ 
   const onChangeTitleHandler = (e)=>{
     setEnteredTitle(e.target.value)
-    checkIfDisabled()
+   
   
   
   }
   const onChangeAmountHandler = (e)=>{
     
     setEnteredAmount(e.target.value)
-    checkIfDisabled()
+    
   
 
   }
@@ -43,7 +42,7 @@ const ExpenseForm = (props)=>{
   const onChangeDateHandler = (e)=>{
     
     setEnteredDate(e.target.value)
-    checkIfDisabled()
+   
     
   }
 
