@@ -3,6 +3,7 @@ import {React,useState} from 'react';
 import Expenses from './Expenses/Expenses';
 import NewExpense from './newExpense/NewExpense';
 
+
 function App() {
 
 
@@ -34,10 +35,11 @@ function App() {
   return (
     <div className="App">
       {/* graphic */}
-      {/* filter */}
+     
       {/* inputform */}
       <NewExpense updateExpenses={updateExpenses}/>
       {/* expenses display */}
+     
      <Expenses expenses={expenses}></Expenses>
     </div>
   );

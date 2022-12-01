@@ -1,12 +1,14 @@
-
+import "./ExpensesFilter.css"
 
 const ExpensesFilter = (props)=>{
 
 
-    return(<>
+    return(<div className="filter-container">
         <h2>Filter by Year</h2> 
-        <option>placeholderText</option>
-    </>)
+
+        {/* Display dynamically */}
+        <select><option>placeholderText</option></select>
+    </div>)
 }
 
 
