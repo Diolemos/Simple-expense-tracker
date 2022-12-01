@@ -5,7 +5,7 @@ const ExpensesFilter = (props)=>{
     let options = []
     let currentYear = new Date().getFullYear()
     for(let i=2019;i<currentYear;i++){
-        options.push(<option>{i}</option>)
+        options.push(<option value={i}>{i}</option>)
     }
 
     
