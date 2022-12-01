@@ -7,7 +7,10 @@ const ExpensesFilter = (props)=>{
     for(let i=2019;i<currentYear;i++){
         options.push(<option key={i} value={i}>{i}</option>)
     }
-
+    const onChangeFilter = (e)=>{
+        //pass a function from (app.js?/expenses.js?) that send the user selected year
+        console.log(e.target.value)
+    }
     
 
 
@@ -19,7 +22,7 @@ const ExpensesFilter = (props)=>{
 
         
 
-        <select>
+        <select onChange={onChangeFilter}>
            {options}
         </select>
     </div>)
