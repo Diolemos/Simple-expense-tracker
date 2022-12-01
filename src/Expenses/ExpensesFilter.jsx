@@ -2,12 +2,26 @@ import "./ExpensesFilter.css"
 
 const ExpensesFilter = (props)=>{
 
+    let options = []
+    let currentYear = new Date().getFullYear()
+    for(let i=2019;i<currentYear;i++){
+        options.push(<option>{i}</option>)
+    }
+
+    
+
+
 
     return(<div className="filter-container">
         <h2>Filter by Year</h2> 
 
-        {/* Display dynamically */}
-        <select><option>placeholderText</option></select>
+       
+
+        
+
+        <select>
+           {options}
+        </select>
     </div>)
 }
 

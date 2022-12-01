@@ -6,7 +6,7 @@ import ExpensesFilter from './ExpensesFilter'
 export default function Expenses (props){
     return(
         <Card className="expenses"> 
-        <ExpensesFilter />
+        <ExpensesFilter expenses={props.expenses}/>
         <ExpensesList expenses={props.expenses}/>
   </Card>
     )
