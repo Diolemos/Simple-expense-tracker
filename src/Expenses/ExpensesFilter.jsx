@@ -2,13 +2,13 @@ import "./ExpensesFilter.css"
 
 const ExpensesFilter = (props)=>{
 
-    let options = []
+    let options = [<option disabled selected>***Select a year***</option>,]
     let currentYear = new Date().getFullYear()
     for(let i=2019;i<currentYear;i++){
         options.push(<option key={i} value={i}>{i}</option>)
     }
     const onChangeFilter = (e)=>{
-        //pass a function from (app.js?/expenses.js?) that send the user selected year
+        props.getFilteredYear(e.target.value)
         console.log(e.target.value)
     }
     
