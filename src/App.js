@@ -12,20 +12,20 @@ function App() {
       
       title: 'Gas',
       amount: 150.31,
-      date: new Date(2022, 11, 22),
+      date: new Date(2021, 11, 22),
     },
     {  title: 'New TV', amount: 799.49, date: new Date(2022, 10, 12) },
     {
       
       title: 'Rent',
       amount: 700,
-      date: new Date(2022, 5, 11),
+      date: new Date(2020, 5, 11),
     },
     {
      
       title: 'New Desk (Wooden)',
       amount: 450,
-      date: new Date(2022, 5, 11),
+      date: new Date(2019, 5, 11),
     },
   ])
 

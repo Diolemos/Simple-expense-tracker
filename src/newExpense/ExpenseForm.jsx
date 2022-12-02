@@ -18,7 +18,7 @@ const ExpenseForm = (props)=>{
   //using chained ternary operators
   
     useEffect(()=>{
-      const isValid = enteredTitle.length<5?false
+      const isValid = enteredTitle.length<4?false
     :enteredAmount==''?false
     :enteredDate==''?false
     :true
